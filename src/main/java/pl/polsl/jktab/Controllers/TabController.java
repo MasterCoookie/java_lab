@@ -28,11 +28,9 @@ public class TabController {
         List<Listing> listings = this.model.getListings();
         while(true) {
             if(this.view.isInsert()) {
-                Listing listing = new Listing("Test", 12.34f, "adfdasfas", true);
-                Listing listing2 = new Listing("Test2", 999.34f, "fffdasff", false);
+                Listing listing = ListingView.createListing();
 
                 listings.add(listing);
-                listings.add(listing2);
 
 
                 this.model.setListings(listings);
