@@ -28,9 +28,8 @@ public class TabController {
         List<Listing> listings = this.model.getListings();
         while(true) {
             if(this.view.isInsert()) {
-                Listing listing = ListingView.createListing();
 
-                this.model.addListing(listing);
+                this.model.addListing(ListingView.createListing());
           
             } else {
 //                List<Listing> listings = this.model.getListings();
