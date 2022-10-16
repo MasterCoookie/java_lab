@@ -4,11 +4,13 @@
  */
 package pl.polsl.jktab.Models;
 
+import java.io.Serializable;
+
 /**
  *
  * @author SuperStudent
  */
-public class Listing {
+public class Listing implements Serializable {
     private String title;
     private float price;
     private String desc;

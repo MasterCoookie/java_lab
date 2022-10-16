@@ -4,6 +4,11 @@
  */
 package pl.polsl.jktab.Models;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +19,10 @@ import java.util.List;
 public class Tab {
     private List<Listing> listings = new ArrayList<Listing>();
 
+    public Tab() {
+        this.deserializeListings();
+    }
+
     public List<Listing> getListings() {
         return listings;
     }
@@ -21,5 +30,40 @@ public class Tab {
     public void setListings(List<Listing> listings) {
         this.listings = listings;
     }
+    
+    public void addListing(Listing listing) {
+        this.listings.add(listing);
+        this.serializeListings();
+    }
+    
+    private void serializeListings() {
+        try {
+            FileOutputStream outputStream = new FileOutputStream("listings_list");
+        
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+
+            objectOutputStream.writeObject(this.listings);
+            objectOutputStream.close();
+            outputStream.close();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void deserializeListings(){
+        try {
+            FileInputStream inputStream = new FileInputStream("listings_list");
+            ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
+
+            this.listings = (ArrayList) objectInputStream.readObject();
+
+            objectInputStream.close();
+            inputStream.close();
+        } catch (IOException | ClassNotFoundException ioe) {
+          ioe.printStackTrace();
+          this.listings = new ArrayList<Listing>();
+        }
+    }
+       
     
 }
