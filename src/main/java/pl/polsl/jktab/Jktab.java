@@ -17,9 +17,12 @@ import pl.polsl.jktab.Views.TabView;
 public class Jktab {
 
     public static void main(String[] args) {
-        Tab tab = new Tab();
+       
         TabView tabView = new TabView();
+        Tab tab = new Tab();
         TabController tabController = new TabController(tab, tabView);
+        
+        tabController.handleUserArgs(args);
         
         tabController.startup();
     }

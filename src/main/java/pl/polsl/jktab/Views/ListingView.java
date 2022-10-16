@@ -24,7 +24,7 @@ public class ListingView {
     
     public static void printDetails(String title, String details, String price, boolean negotiable) {
         System.out.println(title);
-        System.out.print("Descryption: ");
+        System.out.print("\nDescryption: ");
         System.out.println(details);
         System.out.print("Listed for ");
         System.out.print(price);

@@ -42,4 +42,16 @@ public class TabController {
         }
     }
     
+    public void handleUserArgs(String[] args) {
+        int numberOfParams = args.length;
+        
+        if(args.length == 2) {
+            this.model.setUsername(args[0]);
+            this.model.setContact(args[1]);
+        } else {
+            this.model.setUsername(this.view.requestUsername());
+            this.model.setContact(this.view.requestContact());
+        }
+    }
+    
 }
