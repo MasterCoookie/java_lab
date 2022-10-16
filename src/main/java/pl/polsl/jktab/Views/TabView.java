@@ -26,6 +26,13 @@ public class TabView {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         return input.equals("I");
-        
+    }
+    
+    public int listingIndex() {
+        System.out.println("\nTo get more listing details, insert listing number");
+        Scanner sc = new Scanner(System.in);
+        int input = Integer.parseInt(sc.nextLine());
+        //TODO - exceptions
+        return input - 1;
     }
 }

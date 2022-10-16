@@ -20,8 +20,6 @@ public class Listing {
         this.desc = desc;
         this.negotiable = negotiable;
     }
-
-    
     
     public String getTitle() {
         return title;
