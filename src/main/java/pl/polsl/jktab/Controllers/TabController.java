@@ -13,7 +13,7 @@ import pl.polsl.jktab.Views.TabView;
 
 /**
  *
- * @author SuperStudent
+ * @author JK
  */
 public class TabController {
     private Tab model;
@@ -37,7 +37,7 @@ public class TabController {
                 int index = this.view.listingIndex();
                 //TODO - check out of scope
                 String price = String.valueOf(listings.get(index).getPrice());
-                ListingView.printDetails(listings.get(index).getTitle(), listings.get(index).getDesc(), price, listings.get(index).isNegotiable());
+                ListingView.printDetails(listings.get(index).getTitle(), listings.get(index).getDesc(), price, listings.get(index).isNegotiable(), this.model.getUsername(), this.model.getContact());
             }
         }
     }

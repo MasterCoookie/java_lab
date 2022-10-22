@@ -9,7 +9,7 @@ import pl.polsl.jktab.Models.Listing;
 
 /**
  *
- * @author SuperStudent
+ * @author JK
  */
 public class ListingView {
     public static void printShort(String title, String price, boolean negotiable) {
@@ -22,7 +22,7 @@ public class ListingView {
         }
     }
     
-    public static void printDetails(String title, String details, String price, boolean negotiable) {
+    public static void printDetails(String title, String details, String price, boolean negotiable, String username, String contact) {
         System.out.println(title);
         System.out.print("\nDescryption: ");
         System.out.println(details);
@@ -31,6 +31,10 @@ public class ListingView {
         if(negotiable) {
             System.out.println(", Negotiable");
         }
+        System.out.print("\nListed by ");
+        System.out.print(username);
+        System.out.print(" - ");
+        System.out.println(contact);
     }
     
     public static Listing createListing() {

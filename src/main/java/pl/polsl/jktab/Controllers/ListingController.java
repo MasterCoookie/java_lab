@@ -9,7 +9,7 @@ import pl.polsl.jktab.Views.ListingView;
 
 /**
  *
- * @author SuperStudent
+ * @author JK
  */
 public class ListingController {
     private Listing model;

@@ -12,10 +12,13 @@ import pl.polsl.jktab.Views.TabView;
 
 /**
  *
- * @author SuperStudent
+ * @author JK
  */
 public class Jktab {
-
+    /**
+    * Main program method 
+    * @param args command line arguments, 1st - TAB username, 2nd - contact info
+    **/
     public static void main(String[] args) {
        
         TabView tabView = new TabView();

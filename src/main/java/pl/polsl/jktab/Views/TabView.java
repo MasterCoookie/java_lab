@@ -10,7 +10,7 @@ import pl.polsl.jktab.Models.Listing;
 
 /**
  *
- * @author SuperStudent
+ * @author JK
  */
 public class TabView {
     private Scanner sc = new Scanner(System.in);
