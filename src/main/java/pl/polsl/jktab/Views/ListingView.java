@@ -14,7 +14,8 @@ import pl.polsl.jktab.Models.Listing;
 public class ListingView {
     /**
      * Prints into console short listing info.
-     * Used to print out listings in bulk as it only takes a single line
+     * Used to print out listings in bulk as it only takes a single line, 
+     * Static, so it can be used in TabController
      * @param title listing title
      * @param price listing price <strong>as string</strong>
      * @param negotiable if true will add aditional text after price
@@ -31,7 +32,8 @@ public class ListingView {
     
     /**
      * Prints into console detailed listing info
-     * Takes up a lot of space prints everythin
+     * Takes up a lot of space prints everything,
+     * Static, so it can be used in TabController
      * @param title listing title
      * @param details listing details
      * @param price listing price <strong>as string</strong>

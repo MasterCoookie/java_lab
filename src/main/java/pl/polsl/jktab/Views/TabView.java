@@ -13,8 +13,18 @@ import pl.polsl.jktab.Models.Listing;
  * @author JK
  */
 public class TabView {
+    /**
+     * Console scanner as private field,
+     * as it is used in different methods that utilize console readings
+     */
     private Scanner sc = new Scanner(System.in);
     
+    /**
+     * Prints out entire arrayList of lisitngs,
+     * uses Listing view static method
+     * @param listings arrayList of Listing instaces to be printed
+     * @see pl.polsl.jktab.Views.ListingView;
+     */
     public static void printListings(List<Listing> listings) {
         for(int i = 0; i < listings.size(); ++i) {
             System.out.print((i + 1) + ". ");
@@ -23,6 +33,11 @@ public class TabView {
         }
     }
     
+    /**
+     * Asks user if he wants create insert new listing
+     * If char other than I is inputted
+     * @return bool that decides if insert option should be launched later on in controller
+     */
     public boolean isInsert() {
         System.out.println("\nWelcome to TAB, Insert \"L\" to see avilable listings or \"I\" to insert your own");
         String input = this.sc.nextLine();
