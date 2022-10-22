@@ -85,6 +85,10 @@ public class Tab {
     throws ListingAccessException {
         if(this.listings.get(index).getAuthorUname() != username) {
             throw new ListingAccessException("You cannot delete this listing!");
+        } else {
+            //TODO CHECK INDEX
+            this.listings.remove(index);
+            this.serializeListings();
         }
     }
     
