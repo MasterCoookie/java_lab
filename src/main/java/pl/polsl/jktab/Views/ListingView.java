@@ -37,7 +37,7 @@ public class ListingView {
         System.out.println(contact);
     }
     
-    public static Listing createListing() {
+    public static Listing createListing(String authorUname, String authorContact) {
         System.out.println("Insert title");
         Scanner sc = new Scanner(System.in);
         String title = sc.nextLine();
@@ -47,6 +47,6 @@ public class ListingView {
         String details = sc.nextLine();
         System.out.println("Is the price negotiable?");
         boolean negotiable = sc.nextLine().equals("Y");
-        return new Listing(title, price, details, negotiable);
+        return new Listing(title, price, details, negotiable, authorUname, authorContact);
     }
 }

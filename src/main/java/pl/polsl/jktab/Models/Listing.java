@@ -22,7 +22,7 @@ public class Listing implements Serializable {
         return authorUname;
     }
 
-    public String getAuthoContact() {
+    public String getAuthorContact() {
         return authorContact;
     }
 
@@ -30,16 +30,18 @@ public class Listing implements Serializable {
         this.authorUname = authorUname;
     }
 
-    public void setAuthorContact(String authoContact) {
+    public void setAuthorContact(String authorContact) {
         this.authorContact = authorContact;
     }
     
 
-    public Listing(String title, float price, String desc, boolean negotiable) {
+    public Listing(String title, float price, String desc, boolean negotiable, String authorUname, String authorContact) {
         this.title = title;
         this.price = price;
         this.desc = desc;
         this.negotiable = negotiable;
+        this.authorUname = authorUname;
+        this.authorContact = authorContact;
     }
     
     public String getTitle() {

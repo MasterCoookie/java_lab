@@ -56,7 +56,9 @@ public class Tab {
     
     public void removeListing(int index, String username)
     throws ListingAccessException {
-        
+        if(this.listings.get(index).getAuthorUname() != username) {
+            throw new ListingAccessException("You cannot delete this listing!");
+        }
     }
     
     private void serializeListings() {
@@ -86,11 +88,5 @@ public class Tab {
           ioe.printStackTrace();
           this.listings = new ArrayList<Listing>();
         }
-    }
-}
-
-class ListingAccessException extends Exception {
-    public ListingAccessException(String msg) {
-        super(msg);
     }
 }

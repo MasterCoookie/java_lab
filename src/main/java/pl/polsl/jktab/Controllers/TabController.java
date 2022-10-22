@@ -7,6 +7,7 @@ package pl.polsl.jktab.Controllers;
 import java.util.ArrayList;
 import java.util.List;
 import pl.polsl.jktab.Models.Listing;
+import pl.polsl.jktab.Models.ListingAccessException;
 import pl.polsl.jktab.Models.Tab;
 import pl.polsl.jktab.Views.ListingView;
 import pl.polsl.jktab.Views.TabView;
@@ -29,7 +30,7 @@ public class TabController {
         while(true) {
             if(this.view.isInsert()) {
 
-                this.model.addListing(ListingView.createListing());
+                this.model.addListing(ListingView.createListing(this.model.getUsername(), this.model.getContact()));
           
             } else {
 //                List<Listing> listings = this.model.getListings();
@@ -37,9 +38,14 @@ public class TabController {
                 int index = this.view.listingIndex();
                 //TODO - check out of scope
                 String price = String.valueOf(listings.get(index).getPrice());
-                ListingView.printDetails(listings.get(index).getTitle(), listings.get(index).getDesc(), price, listings.get(index).isNegotiable(), this.model.getUsername(), this.model.getContact());
+                ListingView.printDetails(listings.get(index).getTitle(), listings.get(index).getDesc(),
+                        price, listings.get(index).isNegotiable(), listings.get(index).getAuthorUname(), listings.get(index).getAuthorContact());
                 if(this.view.requestDelete()) {
-                    
+                    try {
+                        this.model.removeListing(index, this.model.getUsername());
+                    } catch(ListingAccessException e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
             }
         }
