@@ -15,6 +15,25 @@ public class Listing implements Serializable {
     private float price;
     private String desc;
     private boolean negotiable;
+    private String authorUname;
+    private String authorContact;
+
+    public String getAuthorUname() {
+        return authorUname;
+    }
+
+    public String getAuthoContact() {
+        return authorContact;
+    }
+
+    public void setAuthorUname(String authorUname) {
+        this.authorUname = authorUname;
+    }
+
+    public void setAuthorContact(String authoContact) {
+        this.authorContact = authorContact;
+    }
+    
 
     public Listing(String title, float price, String desc, boolean negotiable) {
         this.title = title;

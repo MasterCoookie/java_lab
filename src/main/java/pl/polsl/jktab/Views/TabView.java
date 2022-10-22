@@ -45,4 +45,10 @@ public class TabView {
         System.out.println("\nInvalid number of arguments, please specify your contact method");
         return this.sc.nextLine();
     }
+    
+    public boolean requestDelete() {
+        System.out.println("If you wish to delete this listing, insert \"D\"");
+        String input = this.sc.nextLine();
+        return input.equals("D");
+    }
 }

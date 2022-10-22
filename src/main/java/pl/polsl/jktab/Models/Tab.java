@@ -54,6 +54,11 @@ public class Tab {
         this.serializeListings();
     }
     
+    public void removeListing(int index, String username)
+    throws ListingAccessException {
+        
+    }
+    
     private void serializeListings() {
         try {
             FileOutputStream outputStream = new FileOutputStream("listings_list");
@@ -82,6 +87,10 @@ public class Tab {
           this.listings = new ArrayList<Listing>();
         }
     }
-       
-    
+}
+
+class ListingAccessException extends Exception {
+    public ListingAccessException(String msg) {
+        super(msg);
+    }
 }

@@ -38,13 +38,14 @@ public class TabController {
                 //TODO - check out of scope
                 String price = String.valueOf(listings.get(index).getPrice());
                 ListingView.printDetails(listings.get(index).getTitle(), listings.get(index).getDesc(), price, listings.get(index).isNegotiable(), this.model.getUsername(), this.model.getContact());
+                if(this.view.requestDelete()) {
+                    
+                }
             }
         }
     }
     
-    public void handleUserArgs(String[] args) {
-        int numberOfParams = args.length;
-        
+    public void handleUserArgs(String[] args) {        
         if(args.length == 2) {
             this.model.setUsername(args[0]);
             this.model.setContact(args[1]);
