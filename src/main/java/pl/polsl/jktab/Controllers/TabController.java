@@ -56,7 +56,6 @@ public class TabController {
                         System.out.println(e.getMessage());
                     }
                 }
-                
             }
         } while(!this.view.requestStr("Q", "If you wish to quit the app, input \"Q\""));
     }

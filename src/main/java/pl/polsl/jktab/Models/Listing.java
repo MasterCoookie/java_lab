@@ -19,22 +19,6 @@ public class Listing implements Serializable {
     private boolean negotiable;
     private String authorUname;
     private String authorContact;
-
-    public String getAuthorUname() {
-        return authorUname;
-    }
-
-    public String getAuthorContact() {
-        return authorContact;
-    }
-
-    public void setAuthorUname(String authorUname) {
-        this.authorUname = authorUname;
-    }
-
-    public void setAuthorContact(String authorContact) {
-        this.authorContact = authorContact;
-    }
     
     /**
      * 6-argument constructor, used when creating a new Listing
@@ -51,6 +35,22 @@ public class Listing implements Serializable {
         this.desc = desc;
         this.negotiable = negotiable;
         this.authorUname = authorUname;
+        this.authorContact = authorContact;
+    }
+
+    public String getAuthorUname() {
+        return authorUname;
+    }
+
+    public String getAuthorContact() {
+        return authorContact;
+    }
+
+    public void setAuthorUname(String authorUname) {
+        this.authorUname = authorUname;
+    }
+
+    public void setAuthorContact(String authorContact) {
         this.authorContact = authorContact;
     }
     
