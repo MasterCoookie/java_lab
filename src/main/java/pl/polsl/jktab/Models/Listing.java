@@ -7,8 +7,10 @@ package pl.polsl.jktab.Models;
 import java.io.Serializable;
 
 /**
- *
+ * Class that represents a single listing, or entry created in a notice board (Tab),
+ * it inherites form Serializable, so that list of its instances can be saved to a file easly 
  * @author JK
+ * @version f1.0
  */
 public class Listing implements Serializable {
     private String title;
@@ -34,7 +36,15 @@ public class Listing implements Serializable {
         this.authorContact = authorContact;
     }
     
-
+    /**
+     * 6-argument constructor, used when creating a new Listing
+     * @param title listing title
+     * @param price asked price
+     * @param desc detailed, longer listing descryption
+     * @param negotiable if true, it means that price can be negotiated
+     * @param authorUname name of listing author
+     * @param authorContact contact info provided by author
+     */
     public Listing(String title, float price, String desc, boolean negotiable, String authorUname, String authorContact) {
         this.title = title;
         this.price = price;

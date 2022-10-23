@@ -9,8 +9,9 @@ import java.util.Scanner;
 import pl.polsl.jktab.Models.Listing;
 
 /**
- *
+ * Tab class view, used as a user interface via console
  * @author JK
+ * @version f1.0
  */
 public class TabView {
     /**

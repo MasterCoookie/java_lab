@@ -13,8 +13,9 @@ import pl.polsl.jktab.Views.ListingView;
 import pl.polsl.jktab.Views.TabView;
 
 /**
- *
+ * Main app controller, suitable for console interface
  * @author JK
+ * @version f1.0
  */
 public class TabController {
     private Tab model;

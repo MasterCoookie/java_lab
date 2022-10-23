@@ -5,8 +5,9 @@
 package pl.polsl.jktab.Models;
 
 /**
- *
+ * Exception that may occur when somebody tries to delete someone elses listing
  * @author JK
+ * @version f1.0
  */
 public class ListingAccessException extends Exception {
     public ListingAccessException(String msg) {
