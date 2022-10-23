@@ -59,6 +59,14 @@ public class TabController {
                             this.view.handleErrMsg(e.getMessage());
                         }
                     }
+                    if(this.view.requestStr("P", "Listing sold and ready to ship? Insert \"P\" to gerate Paczkomaty code")) {
+                        try {
+                            String code = listings.get(index).generateCode(this.model.getUsername(), this.view.requestAddress());
+                            this.view.printCode(code);
+                        } catch(ListingAccessException e) {
+                            this.view.handleErrMsg(e.getMessage());
+                        }
+                    }
                 }
             }
         } while(!this.view.requestStr("Q", "If you wish to quit the app, input \"Q\""));

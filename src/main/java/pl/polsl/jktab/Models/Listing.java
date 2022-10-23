@@ -55,6 +55,23 @@ public class Listing implements Serializable {
         this.authorUname = authorUname;
         this.authorContact = authorContact;
     }
+    
+    /**
+     * Generates shipping code based on listing data and user shipping address
+     * @param username current user name
+     * @param address shipping address
+     * @return generated code in format: "TAB"
+     * @throws ListingAccessException thrown if user tries to generate code for someboby elses listing
+     */
+    public String generateCode(String username, String address)
+    throws ListingAccessException {
+        if(!this.authorUname.equals(username)) {
+            throw new ListingAccessException("You can only generate codes of your own listings!");
+        } else {
+            address = address.replace(" ", "-");
+            return "TAB" + this.title.charAt(0) + this.authorUname.charAt(0) + this.price +"-" + address;
+        }
+    }
 
     public String getAuthorUname() {
         return authorUname;

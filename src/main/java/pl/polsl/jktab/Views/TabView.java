@@ -87,4 +87,22 @@ public class TabView {
     public void handleErrMsg(String msg) {
         System.out.println(msg);
     }
+    
+    /**
+     * Asks user for his address via console input
+     * @return inputted address
+     */
+    public String requestAddress() {
+        System.out.println("Please type in recepient address and press enter");
+        return this.sc.nextLine();
+    }
+    
+    /**
+     * Prints out Paczkomaty code
+     * @param code code to be printed
+     */
+    public void printCode(String code) {
+        System.out.print("Your generated code is: ");
+        System.out.println(code);
+    }
 }
