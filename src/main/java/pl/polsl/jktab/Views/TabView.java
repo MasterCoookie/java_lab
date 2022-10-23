@@ -34,17 +34,6 @@ public class TabView {
     }
     
     /**
-     * Asks user if he wants create insert new listing
-     * If char other than I is inputted returns false
-     * @return bool that decides if insert option should be launched later on in controller
-     */
-    public boolean isInsert() {
-        System.out.println("\nWelcome to TAB, Insert \"L\" to see avilable listings or \"I\" to insert your own");
-        String input = this.sc.nextLine();
-        return input.equals("I");
-    }
-    
-    /**
      * Asks user to input listing number, used to select which details to print out
      * @return user input <strong>as int</strong>, decremented as its used as list index
      */
