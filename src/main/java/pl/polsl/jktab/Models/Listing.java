@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author SuperStudent
+ * @author JK
  */
 public class Listing implements Serializable {
     private String title;

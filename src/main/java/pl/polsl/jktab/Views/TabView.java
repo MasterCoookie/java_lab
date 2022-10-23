@@ -17,7 +17,7 @@ public class TabView {
      * Console scanner as private field,
      * as it is used in different methods that utilize console readings
      */
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
     
     /**
      * Prints out entire arrayList of lisitngs,

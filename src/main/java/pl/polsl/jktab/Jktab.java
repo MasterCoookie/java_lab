@@ -13,6 +13,7 @@ import pl.polsl.jktab.Views.TabView;
 /**
  *
  * @author JK
+ * @version f1.0
  */
 public class Jktab {
     /**
