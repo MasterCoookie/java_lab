@@ -76,4 +76,12 @@ public class TabView {
         String input = this.sc.nextLine();
         return strReq != null && input.equals(strReq);
     }
+    
+    /**
+     * Prints out error message to console
+     * @param msg 
+     */
+    public void handleErrMsg(String msg) {
+        System.out.println(msg);
+    }
 }

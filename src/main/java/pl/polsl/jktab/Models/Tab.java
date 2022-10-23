@@ -19,6 +19,12 @@ import java.util.List;
  */
 public class Tab {
     /**
+     * ArrayList of all user-added listings
+     * @see pl.polsl.jktab.Models.Listing
+     */
+    private List<Listing> listings = new ArrayList<Listing>();
+
+    /**
      * Basic 0 argument constructor,
      * It loads listing from file
      */
@@ -26,11 +32,6 @@ public class Tab {
         this.deserializeListings();
     }
  
-    /**
-     * ArrayList of all user-added listings
-     * @see pl.polsl.jktab.Models.Listing
-     */
-    private List<Listing> listings = new ArrayList<Listing>();
     /**
      * Username of current user
      */

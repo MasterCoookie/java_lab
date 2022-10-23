@@ -53,7 +53,7 @@ public class TabController {
                     try {
                         this.model.removeListing(index, this.model.getUsername());
                     } catch(ListingAccessException e) {
-                        System.out.println(e.getMessage());
+                        this.view.handleErrMsg(e.getMessage());
                     }
                 }
             }
