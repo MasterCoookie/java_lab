@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class Tab {
     /**
-     * Basic 0 argument constructor
-     * 
+     * Basic 0 argument constructor,
+     * It loads listing from file
      */
     public Tab() {
         this.deserializeListings();

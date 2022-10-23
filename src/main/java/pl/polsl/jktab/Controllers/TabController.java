@@ -4,7 +4,6 @@
  */
 package pl.polsl.jktab.Controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import pl.polsl.jktab.Models.Listing;
 import pl.polsl.jktab.Models.ListingAccessException;

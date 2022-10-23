@@ -72,7 +72,6 @@ public class TabView {
      * @return true if strReq was inputted, false if any other str recieved
      */
     public boolean requestStr(String strReq, String msg) {
-//        System.out.println("If you wish to delete this listing, insert \"D\"");
         System.out.println(msg);
         String input = this.sc.nextLine();
         return strReq != null && input.equals(strReq);
