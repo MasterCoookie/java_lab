@@ -13,11 +13,29 @@ import java.io.Serializable;
  * @version f1.0
  */
 public class Listing implements Serializable {
+    /**
+     * listing title, displayed as its identifier
+     */
     private String title;
+    /**
+     * listing author's asking price
+     */
     private float price;
+    /**
+     * longer, detailed listing descryption
+     */
     private String desc;
+    /**
+     * true if author is willing to negotiate the price
+     */
     private boolean negotiable;
+    /**
+     * username of listing author
+     */
     private String authorUname;
+    /**
+     * contact info provided by listing author
+     */
     private String authorContact;
     
     /**

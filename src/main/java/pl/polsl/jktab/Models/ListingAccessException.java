@@ -10,6 +10,10 @@ package pl.polsl.jktab.Models;
  * @version f1.0
  */
 public class ListingAccessException extends Exception {
+    /**
+     * 1-arg constructor
+     * @param msg error message to be displayed
+     */
     public ListingAccessException(String msg) {
         super(msg);
     }
