@@ -40,9 +40,12 @@ public class TabView {
      */
     public int listingIndex() {
         System.out.println("\nTo get more listing details, insert listing number");
-        int input = Integer.parseInt(this.sc.nextLine());
-        //TODO - exceptions
-        return input - 1;
+        try {
+            int input = Integer.parseInt(this.sc.nextLine());
+            return input - 1;
+        } catch(NumberFormatException e) {
+           return -1;
+        }
     }
     
     /**

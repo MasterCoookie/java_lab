@@ -17,8 +17,8 @@ import pl.polsl.jktab.Views.TabView;
  * @version f1.0
  */
 public class TabController {
-    private Tab model;
-    private TabView view;
+    private final Tab model;
+    private final TabView view;
     
     /**
      * 2 argument constructor, puts together MVC elements
@@ -44,16 +44,20 @@ public class TabController {
             } else {
                 this.view.printListings(this.model.getListings());
                 int index = this.view.listingIndex();
-                //TODO - check out of scope
-                String price = String.valueOf(listings.get(index).getPrice());
-                ListingView.printDetails(listings.get(index).getTitle(), listings.get(index).getDesc(),
-                        price, listings.get(index).isNegotiable(), listings.get(index).getAuthorUname(), listings.get(index).getAuthorContact());
                 
-                if(this.view.requestStr("D", "If you wish to delete this listing, insert \"D\"")) {
-                    try {
-                        this.model.removeListing(index, this.model.getUsername());
-                    } catch(ListingAccessException e) {
-                        this.view.handleErrMsg(e.getMessage());
+                if(index < 0 || (index > listings.size() - 1)) {
+                    this.view.handleErrMsg("Incorrect index!");
+                } else {
+                    String price = String.valueOf(listings.get(index).getPrice());
+                    ListingView.printDetails(listings.get(index).getTitle(), listings.get(index).getDesc(),
+                            price, listings.get(index).isNegotiable(), listings.get(index).getAuthorUname(), listings.get(index).getAuthorContact());
+
+                    if(this.view.requestStr("D", "If you wish to delete this listing, insert \"D\"")) {
+                        try {
+                            this.model.removeListing(index, this.model.getUsername());
+                        } catch(ListingAccessException e) {
+                            this.view.handleErrMsg(e.getMessage());
+                        }
                     }
                 }
             }

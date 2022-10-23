@@ -10,7 +10,7 @@ import pl.polsl.jktab.Models.Listing;
 /**
  *
  * @author JK
- * @version f1.0
+ * @version f1.0L
  */
 public class ListingView {
     /**
