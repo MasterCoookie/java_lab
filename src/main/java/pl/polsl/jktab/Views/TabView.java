@@ -76,13 +76,15 @@ public class TabView {
     }
     
     /**
-     * Asks user if he wants to delete displayed listing
-     * If char other than D is inputted returns false
-     * @return bool used to decide if listing should be deleted
+     * Asks user to input given string
+     * @param strReq Expected string
+     * @param msg Console message to be displaed eg. "Pls input A"
+     * @return true if strReq was inputted, false if any other str recieved
      */
-    public boolean requestDelete() {
-        System.out.println("If you wish to delete this listing, insert \"D\"");
+    public boolean requestStr(String strReq, String msg) {
+//        System.out.println("If you wish to delete this listing, insert \"D\"");
+        System.out.println(msg);
         String input = this.sc.nextLine();
-        return input.equals("D");
+        return strReq != null && input.equals(strReq);
     }
 }

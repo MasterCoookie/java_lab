@@ -36,8 +36,8 @@ public class TabController {
      */
     public void startup() {
         List<Listing> listings = this.model.getListings();
-        while(true) {
-            if(this.view.isInsert()) {
+        do {
+            if(this.view.requestStr("I", "\nWelcome to TAB, Insert \"L\" to see avilable listings or \"I\" to insert your own")) {
 
                 this.model.addListing(ListingView.createListing(this.model.getUsername(), this.model.getContact()));
           
@@ -49,7 +49,7 @@ public class TabController {
                 ListingView.printDetails(listings.get(index).getTitle(), listings.get(index).getDesc(),
                         price, listings.get(index).isNegotiable(), listings.get(index).getAuthorUname(), listings.get(index).getAuthorContact());
                 
-                if(this.view.requestDelete()) {
+                if(this.view.requestStr("D", "If you wish to delete this listing, insert \"D\"")) {
                     try {
                         this.model.removeListing(index, this.model.getUsername());
                     } catch(ListingAccessException e) {
@@ -58,7 +58,7 @@ public class TabController {
                 }
                 
             }
-        }
+        } while(!this.view.requestStr("Q", "If you wish to quit the app, input \"Q\""));
     }
     
     /**

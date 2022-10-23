@@ -83,7 +83,7 @@ public class Tab {
      */
     public void removeListing(int index, String username)
     throws ListingAccessException {
-        if(this.listings.get(index).getAuthorUname() != username) {
+        if(!this.listings.get(index).getAuthorUname().equals(username)) {
             throw new ListingAccessException("You cannot delete this listing!");
         } else {
             //TODO CHECK INDEX
